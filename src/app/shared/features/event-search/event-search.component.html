@@ -1,0 +1,46 @@
+<form>
+  <div
+    [className]="
+      !simplifiedDisplay
+        ? 'row no-gutters custom-search-input-2'
+        : 'row no-gutters justify-content-md-center'
+    "
+  >
+    <div
+      [className]="
+        simplifiedDisplay ? 'col-lg-7 custom-search-input-2' : 'col-lg-4'
+      "
+    >
+      <div class="form-group">
+        <search-typeahead></search-typeahead>
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div *ngIf="!simplifiedDisplay" class="col-lg-3">
+      <div class="form-group">
+        <app-date-range-selection
+          [from]="defaultFrom"
+          [to]="defaultTo"
+          (dateRangeSelection)="onDateRangeSelection($event)"
+        ></app-date-range-selection>
+      </div>
+    </div>
+    <div *ngIf="!simplifiedDisplay" class="col-lg-3">
+      <div class="form-group">
+        <categoryselect></categoryselect>
+      </div>
+    </div>
+    <div
+      [className]="
+        simplifiedDisplay ? 'col-lg-2 custom-search-input-2' : 'col-lg-2'
+      "
+    >
+      <input
+        type="submit"
+        class="btn_search"
+        (click)="submitSearch('dfgdf')"
+        value="Search"
+      />
+    </div>
+  </div>
+</form>

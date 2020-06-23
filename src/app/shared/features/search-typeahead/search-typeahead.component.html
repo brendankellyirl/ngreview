@@ -1,0 +1,19 @@
+<div class="input-group" id="search-typeahead">
+  <ng-template #rt let-r="result" let-t="term">
+    <ngb-highlight [result]="r.title" [term]="t"></ngb-highlight>
+  </ng-template>
+
+  <input
+    maxlength="65"
+    #searchValue
+    id="searchEventTitle"
+    name="searchEventTitle"
+    type="text"
+    class="form-control"
+    [(ngModel)]="model"
+    [ngbTypeahead]="search"
+    [inputFormatter]="formatter"
+    [resultTemplate]="rt"
+    placeholder="What are you looking for..."
+  />
+</div>

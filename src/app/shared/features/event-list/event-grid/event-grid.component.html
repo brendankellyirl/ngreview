@@ -1,0 +1,73 @@
+<div *ngIf="!loadingVal" class="isotope-wrapper spl spr">
+  <div class="row">
+    <div
+      *ngFor="let event of events"
+      class="col-xl-4 col-lg-6 col-md-6 isotope-item popular"
+    >
+      <div class="box_grid">
+        <figure>
+          <a href="#0" class="wish_bt"></a>
+          <a [routerLink]="['/events/', event._id]"
+            ><img
+              src="{{ event.imageUrl }}"
+              class="img-fluid"
+              alt=""
+              width="800"
+              height="533"
+            />
+            <div class="read_more"><span>Read more</span></div></a
+          >
+          <small *ngFor="let category of event.category">
+            {{ category.displayName }}
+          </small>
+        </figure>
+        <div class="wrapper">
+          <h3 class="event-title">
+            <a [routerLink]="['/events/', event._id]">{{ event?.title }}</a>
+          </h3>
+
+          <div class="event-details">
+            <div class="icon-container">
+              <i class="fa fa-calendar-o pr-2" aria-hidden="true"></i>
+            </div>
+
+            {{ event?.startDate | displayDatePattern: 1 }},
+            {{ event?.startTime }}
+          </div>
+          <div class="event-details">
+            <div class="icon-container">
+              <i class="fa fa-map-marker pr-2" aria-hidden="true"></i>
+            </div>
+            {{ event?.location?.name }},
+            {{ event?.location?.address1 }}
+          </div>
+        </div>
+        <ul>
+          <li>
+            <span *ngIf="event.tickets[0].freeEvent">FREE Event</span>
+            <span *ngIf="!event.tickets[0].freeEvent"
+              >From
+              {{ event.tickets[0].price | currency: "EUR":"symbol" }}
+            </span>
+            <span>
+              <u> </u>
+            </span>
+          </li>
+          <li>
+            <div class="score">
+              <!-- <span>Superb<em>350 Reviews</em></span
+                      ><strong>100 days</strong> -->
+              <span *ngIf="webNavSupported"
+                >Super <strong (click)="shareApi(event)">share</strong></span
+              >
+              <span *ngIf="!webNavSupported">
+                Not Super
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- /box_grid -->
+  </div>
+</div>

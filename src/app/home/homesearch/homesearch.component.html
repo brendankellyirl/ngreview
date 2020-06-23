@@ -1,0 +1,36 @@
+<form>
+  <div class="row no-gutters justify-content-md-center">
+    <div class="col-lg-7 custom-search-input-2">
+      <div class="form-group">
+        <div class="input-group" id="search-typeahead">
+          <ng-template #rt let-r="result" let-t="term">
+            <ngb-highlight [result]="r.title" [term]="t"></ngb-highlight>
+          </ng-template>
+
+          <input
+            maxlength="65"
+            #searchValue
+            id="searchEventTitle"
+            name="searchEventTitle"
+            type="text"
+            class="form-control"
+            [(ngModel)]="model"
+            [ngbTypeahead]="search"
+            [inputFormatter]="formatter"
+            [resultTemplate]="rt"
+            placeholder="What are you looking for..."
+          />
+        </div>
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="col-lg-2 custom-search-input-2">
+      <input
+        type="submit"
+        class="btn_search"
+        (click)="submitSearch(searchValue.value)"
+        value="Search Events"
+      />
+    </div>
+  </div>
+</form>

@@ -1,0 +1,118 @@
+<section
+  class="hero_in"
+  [ngStyle]="{
+    'background-image': 'url(' + event.event.imageUrl + ')',
+    'background-repeat': 'no-repeat',
+    'background-position': 'center center',
+    'background-size': 'cover'
+  }"
+>
+  <div class="wrapper">
+    <div class="container">
+      <h1 class="fadeInUp">{{ event.event.title }}</h1>
+    </div>
+  </div>
+</section>
+<!--/hero_in-->
+
+<div class="bg_color_1">
+  <!-- Internal Nav -->
+  <nav class="secondary_nav sticky_horizontal">
+    <div class="container">
+      <div class="row">
+        <!-- <ul class="clearfix">
+        <li><a href="#description" class="active">Description</a></li>
+        <li><a href="#reviews">Tickets</a></li>
+        <li><a href="#reviews">Location</a></li>
+        <li><a href="#sidebar">Booking</a></li>
+      </ul> -->
+        <div class="col-lg-8 pd-top">
+          <div class="event-details">
+            <div class="icon-container">
+              <i class="fa fa-ticket pr-2 fa-lg" aria-hidden="true"></i>
+            </div>
+            <div class="event-info" *ngIf="event.event.tickets[0].freeEvent">
+              FREE Event
+            </div>
+            <div class="event-info" *ngIf="!event.event.tickets[0].freeEvent">
+              {{ event.event.tickets[0].price | currency: "EUR":"symbol" }}
+            </div>
+          </div>
+
+          <div class="event-details">
+            <div class="icon-container">
+              <i class="fa fa-calendar-o pr-2 fa-lg" aria-hidden="true"></i>
+            </div>
+            <div class="event-info">
+              {{ event?.event.startDate | displayDatePattern: 2 }},
+              {{ event?.event.startTime }}
+            </div>
+          </div>
+
+          <div class="event-details">
+            <div class="icon-container">
+              <i class="fa fa-map-marker pr-2 fa-lg" aria-hidden="true"></i>
+            </div>
+            <div class="event-info" *ngIf="event.event.location.name">
+              {{ event.event.location | displayLocationAddress }}
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 pd-top my-auto">
+          <div class="icon-container">
+            <i class="fa fa-share-alt pr-2 fa-2x" aria-hidden="true"></i>
+            Share
+          </div>
+          <div class="icon-container">
+            <i class="fa fa-heart-o pr-2 fa-2x" aria-hidden="true"></i>
+            Favourite
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Internal Nav -->
+
+  <!-- Main Section -->
+  <div class="container margin_60_35 main_section">
+    <div class="row">
+      <div class="col-lg-8">
+        <!-- Description -->
+        <section id="description">
+          <h2>Description</h2>
+          <p>
+            {{ event.event.description }}
+          </p>
+        </section>
+        <!-- Description -->
+
+        <!-- Tickets -->
+        <section id="tickets">
+          <h2>Tickets</h2>
+          <p>
+            {{ event.event.description }}
+          </p>
+        </section>
+        <!-- Tickets -->
+
+        <!-- Location -->
+        <section id="location">
+          <h2>Location</h2>
+          <p>
+            {{ event.event.description }}
+          </p>
+        </section>
+        <!-- Location -->
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="col-lg-4" id="sidebar"></aside>
+      <!-- Sidebar -->
+    </div>
+  </div>
+  <!-- Description -->
+
+  <div class="container-fluid">
+    <div #mapContainer id="map"></div>
+  </div>
+</div>

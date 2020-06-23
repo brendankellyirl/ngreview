@@ -1,0 +1,34 @@
+.event-title {
+  min-height: 75px;
+}
+
+.box_grid .wrapper {
+  padding: 25px;
+  min-height: 215px;
+  max-height: 215px;
+}
+
+.icon-container {
+  width: 20px;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  vertical-align: bottom;
+  margin: 0 0.4rem 0 0;
+}
+
+.event-details {
+  padding-bottom: 7px;
+  display: flex;
+}
+
+@media only screen and (min-width: 768px) {
+  .spl {
+    padding-left: 1.1rem !important;
+  }
+
+  .spr {
+    padding-right: 1.9rem !important;
+  }
+}

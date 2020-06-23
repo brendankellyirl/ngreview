@@ -1,0 +1,14 @@
+<div *ngIf="!isAccepted">
+    <div class="row no-gutters justify-content-center cookiewrapper pt-3 pb-3 pl-2">
+        <div role="dialog" aria-live="polite" aria-label="cookieconsent" aria-describedby="cookieconsent:desc" class="col-9">
+            <span id="cookieconsent:desc" class="cc-message">This website uses cookies to ensure you get the best experience
+                on our website.
+                <a aria-label="learn more about cookies" role="button" rel="noreferrer" tabindex="0" class="cc-link" href="https://cookiesandyou.com"
+                    target="_blank">About Cookies</a>
+            </span>
+        </div>
+        <div class="compliance col-3 text-right pl-2 pr-4 left-boarder">
+            <a aria-label="dismiss cookie message" (click)="setLocalStorage()" role="button" class="cc-link" tabindex="0">Remove</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+@media only screen and (min-width: 768px) {
+  .spl {
+    padding-left: 1.9rem !important;
+  }
+
+  .spr {
+    padding-right: 1.9rem !important;
+  }
+}

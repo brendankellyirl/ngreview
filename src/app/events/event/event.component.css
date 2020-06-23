@@ -1,0 +1,49 @@
+.event_detail:before {
+  background: url(../../../assets/img/hero_in_bg_5.jpg) center center no-repeat;
+  background-size: cover;
+}
+.wrapper {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.icon-container {
+  width: 40px;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  vertical-align: bottom;
+  margin: 0 0.4rem 0 0;
+}
+
+.pd-top {
+  padding-top: 7px;
+}
+
+.sticky {
+  position: fixed;
+  top: 85px;
+  width: inherit;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.container-fluid {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.event-info {
+  font-size: 1rem;
+  width: 100%;
+}
+
+.event-details {
+  padding-bottom: 7px;
+  display: flex;
+  color: #008489;
+}

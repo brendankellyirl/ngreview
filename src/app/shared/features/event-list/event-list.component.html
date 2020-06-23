@@ -1,0 +1,44 @@
+<section
+  class="section event-listing-section"
+  [ngStyle]="{ 'background-color': getBgColour() }"
+>
+  <div *ngIf="errorFlagVal">
+    <div class="row justify-content-center">
+      <div class="errorMessage text-center pt-5 pb-5">
+        <h4>Well this is embarrassing!</h4>
+        <p>
+          An error occurred while loading the events! Please refresh your
+          browser
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <app-loading [isLoading]="loadingVal"></app-loading>
+
+  <no-events
+    [eventTotal]="total"
+    [loadingStatus]="loadingVal"
+    [errorStatus]="errorFlagVal"
+  ></no-events>
+
+  <event-grid-comp
+    *ngIf="gridView"
+    [parentEvents]="parentEvents"
+    [loadingVal]="loadingVal"
+    [errorFlagVal]="errorFlagVal"
+    (eventOutput)="selectEvent($event)"
+    addPadding="true"
+    backgroundColour="dark"
+  ></event-grid-comp>
+
+  <event-table-comp
+    *ngIf="!gridView"
+    [parentEvents]="parentEvents"
+    [loadingVal]="loadingVal"
+    [errorFlagVal]="errorFlagVal"
+    (eventOutput)="selectEvent($event)"
+    addPadding="true"
+    backgroundColour="dark"
+  ></event-table-comp>
+</section>

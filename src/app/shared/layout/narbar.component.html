@@ -1,0 +1,123 @@
+<header class="header menu_fixed" id="header">
+  <div id="logo">
+    <a [routerLink]="['/']">
+      <img
+        src="assets/img/logo.png"
+        width="150"
+        height="36"
+        data-retina="true"
+        alt=""
+        class="logo_normal"
+      />
+      <img
+        src="assets/img/logo_sticky.png"
+        width="150"
+        height="36"
+        data-retina="true"
+        alt=""
+        class="logo_sticky"
+      />
+    </a>
+  </div>
+
+  <ul id="top_menu">
+    <!-- <li>
+      <button (click)="auth.login()" *ngIf="!auth.loggedIn">Log In</button>
+    </li>
+    <li>
+      <button (click)="auth.logout()" *ngIf="auth.loggedIn">Log Out</button>
+    </li> -->
+    <li>
+      <a
+        [routerLink]="['/auth/login']"
+        id="sign-in"
+        class="login"
+        title="Sign In"
+        >Sign In</a
+      >
+    </li>
+    <li>
+      <a href="wishlist.html" class="wishlist_bt_top" title="Your wishlist"
+        >Your wishlist</a
+      >
+    </li>
+  </ul>
+  <!-- /top_menu -->
+
+  <a (click)="menuClick()" class="btn_mobile">
+    <div class="hamburger hamburger--spin" id="hamburger">
+      <div class="hamburger-box">
+        <div class="hamburger-inner"></div>
+      </div>
+    </div>
+  </a>
+
+  <nav
+    id="mm-menu"
+    class="main-menu mm-menu mm-offcanvas mm-hasnavbar-bottom-1 mm-pagedim-black"
+    [class.mm-opened]="getMobileMenuStatus()"
+  >
+    <div class="mm-panels">
+      <div class="mm-panel mm-hasnavbar mm-opened" id="mm-1">
+        <div class="mm-navbar">
+          <a class="mm-title" (click)="menuClick()">Close Menu X</a>
+        </div>
+        <ul class="mm-listview">
+          <li>
+            <a
+              [routerLink]="['/']"
+              (click)="menuClick()"
+              routerLinkActive="active"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              [routerLink]="['/events']"
+              (click)="menuClick()"
+              routerLinkActive="active"
+              >Events</a
+            >
+          </li>
+          <li>
+            <a
+              [routerLink]="['/user']"
+              (click)="menuClick()"
+              routerLinkActive="active"
+              >User Profile</a
+            >
+          </li>
+          <li>
+            <a
+              [routerLink]="['/auth/login']"
+              (click)="menuClick()"
+              routerLinkActive="active"
+              >Sign In</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mm-navbars-bottom">
+      <div class="mm-navbar mm-navbar-size-1">
+        ©2018 Liveely Letterkenny
+      </div>
+    </div>
+  </nav>
+
+  <nav id="menu" class="main-menu">
+    <ul>
+      <li>
+        <span><a [routerLink]="['/']">Home</a></span>
+      </li>
+      <li>
+        <span><a [routerLink]="['/events']">Events</a></span>
+      </li>
+      <li>
+        <span><a [routerLink]="['/user']">User</a></span>
+      </li>
+    </ul>
+  </nav>
+</header>
+<!-- /header -->

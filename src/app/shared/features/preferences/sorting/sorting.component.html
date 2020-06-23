@@ -1,0 +1,63 @@
+<div class="filters_listing sticky_horizontal">
+  <div class="container">
+    <ul class="clearfix">
+      <li>
+        <div class="switch-field">
+          <input
+            type="radio"
+            id="all"
+            name="listing_filter"
+            value="all"
+            checked 
+            data-filter="*"
+            class="selected"
+          />
+          <label for="all">Date</label>
+          <input
+            type="radio"
+            id="popular"
+            name="listing_filter"
+            value="popular"
+            data-filter=".popular"
+          />
+          <label for="popular">Price</label>
+          <input
+            type="radio"
+            id="latest"
+            name="listing_filter"
+            value="latest"
+            data-filter=".latest"
+          />
+          <label for="latest">Popular</label>
+          <input
+            type="radio"
+            id="free"
+            name="listing_filter"
+            value="latest"
+            data-filter=".free"
+          />
+          <label for="free">Free Only</label>
+        </div>
+      </li>
+      <li>
+        <div class="layout_view">
+          <a
+            (click)="setDisplayPreference(true)"
+            class="pointer"
+            tabindex="1"
+            [class.active]="gridView"
+            ><i class="fa p10 fa-th"></i
+          ></a>
+          <a
+            (click)="setDisplayPreference(false)"
+            tabindex="2"
+            class="pointer"
+            [class.active]="!gridView"
+            ><i class="fa fa-list"></i
+          ></a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <!-- /container -->
+</div>

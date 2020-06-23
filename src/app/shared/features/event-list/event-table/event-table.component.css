@@ -1,0 +1,12 @@
+.event-details {
+  padding-bottom: 7px;
+}
+
+.icon-container {
+  width: 20px;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  vertical-align: bottom;
+}
